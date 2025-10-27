@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { cn } from "../lib/utils";
 
 export const ThemeToggle = () => {
-    const [isLightMode, setLightMode] = useState(true);
+    const [isLightMode, setLightMode] = useState(false);
     // useEffect is used for "Do something after render, and optionally clean it up."
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme");
@@ -19,7 +19,7 @@ export const ThemeToggle = () => {
     const toggleTheme = () => {
         if (isLightMode) {
             document.documentElement.classList.remove("light");
-            localStorage.setItem("theme", "light");
+            localStorage.setItem("theme", "dark");
             setLightMode(false);
         }
         else {
